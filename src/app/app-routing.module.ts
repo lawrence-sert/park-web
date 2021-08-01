@@ -4,8 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 //Main Pages
 import { HomeComponent } from 'src/app/main/home/home.component';
 import { AboutComponent } from 'src/app/main/about/about.component';
+import { BoardOfDirectorsComponent } from 'src/app/main/board-of-directors/board-of-directors.component';
 import { WhatWeDoComponent } from 'src/app/main/what-we-do/what-we-do.component';
 import { ContactsComponent } from 'src/app/main/contacts/contacts.component';
+import { MobileAppComponent } from 'src/app/main/mobile-app/mobile-app.component';
 import { FaqComponent } from 'src/app/main/faq/faq.component';
 import { TermsAndConditionsComponent } from 'src/app/main/terms-and-conditions/terms-and-conditions.component';
 import { PrivacyPolicyComponent } from 'src/app/main/privacy-policy/privacy-policy.component';
@@ -32,8 +34,10 @@ const routes: Routes = [
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
 	{ path: 'home', component: HomeComponent, data: {title: 'Home Page'} },
 	{ path: 'about', component: AboutComponent, data: {title: 'About Us'} },
+	{ path: 'board', component: BoardOfDirectorsComponent, data: {title: 'Board Of Directors'} },
 	{ path: 'what-we-do', component: WhatWeDoComponent, data: {title: 'What We Do'} },
 	{ path: 'contacts', component: ContactsComponent, data: {title: 'Contact Us'} },
+	{ path: 'mobile', component: MobileAppComponent, data: {title: 'Mobile'} },
 	{ path: 'faq', component: FaqComponent, data: {title: 'FAQ'} },
 	{ path: 'terms-and-conditions', component: TermsAndConditionsComponent, data: {title: 'Terms And Conditions'} },
 	{ path: 'privacy-policy', component: PrivacyPolicyComponent, data: {title: 'Privacy Policy'} },

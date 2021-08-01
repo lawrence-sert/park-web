@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
+
+//ngx addons
+import { ToastrModule } from 'ngx-toastr';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-//firebase authentication
-
+//firestore
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
 
 
 import { HomeComponent } from 'src/app/main/home/home.component';
@@ -23,29 +32,40 @@ import { VendorRegComponent } from './vendor/vendor-reg/vendor-reg.component';
 import { WhatWeDoComponent } from './main/what-we-do/what-we-do.component';
 import { MarketPlaceComponent } from './market/market-place/market-place.component';
 import { ShopComponent } from './market/shop/shop.component';
+import { BoardOfDirectorsComponent } from './main/board-of-directors/board-of-directors.component';
+import { MobileAppComponent } from './main/mobile-app/mobile-app.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    BasketCreateComponent,
-    BasketSummaryComponent,
-    NoPageFoundComponent,
-    AboutComponent,
-    ContactsComponent,
-    TermsAndConditionsComponent,
-    PrivacyPolicyComponent,
-    FaqComponent,
-    CookiesPolicyComponent,
-    FarmerRegComponent,
-    VendorRegComponent,
-    WhatWeDoComponent,
-    MarketPlaceComponent,
-    ShopComponent
+  AppComponent,
+  HomeComponent,
+  BasketCreateComponent,
+  BasketSummaryComponent,
+  NoPageFoundComponent,
+  AboutComponent,
+  ContactsComponent,
+  TermsAndConditionsComponent,
+  PrivacyPolicyComponent,
+  FaqComponent,
+  CookiesPolicyComponent,
+  FarmerRegComponent,
+  VendorRegComponent,
+  WhatWeDoComponent,
+  MarketPlaceComponent,
+  ShopComponent,
+  BoardOfDirectorsComponent,
+  MobileAppComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+  BrowserModule,
+  AppRoutingModule,
+  ReactiveFormsModule,
+  FormsModule,
+  BrowserAnimationsModule, // required animations module
+  ToastrModule.forRoot(), // ToastrModule added
+  NgxPaginationModule,
+  AngularFireModule.initializeApp(environment.firebase),
+  AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
