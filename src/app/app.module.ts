@@ -34,6 +34,11 @@ import { MarketPlaceComponent } from './market/market-place/market-place.compone
 import { ShopComponent } from './market/shop/shop.component';
 import { BoardOfDirectorsComponent } from './main/board-of-directors/board-of-directors.component';
 import { MobileAppComponent } from './main/mobile-app/mobile-app.component';
+import { DashboardComponent } from './auth/dashboard/dashboard.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './auth/verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +59,12 @@ import { MobileAppComponent } from './main/mobile-app/mobile-app.component';
   MarketPlaceComponent,
   ShopComponent,
   BoardOfDirectorsComponent,
-  MobileAppComponent
+  MobileAppComponent,
+  DashboardComponent,
+  SignInComponent,
+  SignUpComponent,
+  ForgotPasswordComponent,
+  VerifyEmailComponent
   ],
   imports: [
   BrowserModule,
