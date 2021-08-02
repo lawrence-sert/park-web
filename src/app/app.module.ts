@@ -70,16 +70,16 @@ import { VerifyEmailComponent } from './auth/verify-email/verify-email.component
   VerifyEmailComponent
   ],
   imports: [
-  BrowserModule,
-  AppRoutingModule,
-  ReactiveFormsModule,
-  FormsModule,
-  BrowserAnimationsModule, // required animations module
-  ToastrModule.forRoot(), // ToastrModule added
-  NgxPaginationModule,
-  AngularFireModule.initializeApp(environment.firebase),
-  AngularFireDatabaseModule,
-  AngularFireAuthModule,
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
+    NgxPaginationModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
