@@ -28,9 +28,19 @@ import { BasketSummaryComponent } from 'src/app/basket/basket-summary/basket-sum
 import { MarketPlaceComponent } from 'src/app/market/market-place/market-place.component';
 import { ShopComponent } from 'src/app/market/shop/shop.component';
 
+//Application Authentication
+import { DashboardComponent } from 'src/app/auth/dashboard/dashboard.component';
+import { SignInComponent } from 'src/app/auth/sign-in/sign-in.component';
+import { SignUpComponent } from 'src/app/auth/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from 'src/app/auth/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from 'src/app/auth/verify-email/verify-email.component';
+import { AuthGuard } from "src/app/guards/auth.guard";
+
+//Page Error
 import { NoPageFoundComponent } from 'src/app/main/no-page-found/no-page-found.component';
 
 const routes: Routes = [
+	//main
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
 	{ path: 'home', component: HomeComponent, data: {title: 'Home Page'} },
 	{ path: 'about', component: AboutComponent, data: {title: 'About Us'} },
@@ -43,17 +53,28 @@ const routes: Routes = [
 	{ path: 'privacy-policy', component: PrivacyPolicyComponent, data: {title: 'Privacy Policy'} },
 	{ path: 'cookies-policy', component: CookiesPolicyComponent, data: {title: 'Cookies Policy'} },
 
-
+	//farmer
 	{ path: 'farmer-reg', component: FarmerRegComponent, data: {title: 'Farmer Registration'} },
 
+	//vendor
 	{ path: 'vendor-reg', component: VendorRegComponent, data: {title: 'Vendor Registration'} },
 
+	//basket
 	{ path: 'basket-create', component: BasketCreateComponent, data: {title: 'Create Basket'} },
 	{ path: 'basket-summary', component: BasketSummaryComponent, data: {title: 'Summary Basket'} },
 
+	//market
 	{ path: 'market-place', component: MarketPlaceComponent, data: {title: 'Market Place'} },
 	{ path: 'shop', component: ShopComponent, data: {title: 'Shop'} },
 
+	//auth 
+	{ path: 'dashboard', component: SignInComponent, canActivate: [AuthGuard], data: {title: 'Dashboard'} },
+	{ path: 'sign-in', component: SignInComponent, data: {title: 'Sign In'} },
+	{ path: 'sign-up', component: SignUpComponent, data: {title: 'Sign Up'} },
+	{ path: 'forgot', component: SignUpComponent, data: {title: 'Forgot Password'} },
+	{ path: 'verify', component: SignUpComponent, data: {title: 'Verify Email'} },
+
+	//error
 	{ path: '**', component: NoPageFoundComponent, data: {title: 'Page Error'} },
 ];
 

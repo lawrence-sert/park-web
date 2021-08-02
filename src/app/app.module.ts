@@ -14,7 +14,10 @@ import { AppComponent } from './app.component';
 //firestore
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from "@angular/fire/auth";
 import { environment } from '../environments/environment';
+
+import { AuthService } from "src/app/services/auth.service";
 
 
 import { HomeComponent } from 'src/app/main/home/home.component';
@@ -76,8 +79,9 @@ import { VerifyEmailComponent } from './auth/verify-email/verify-email.component
   NgxPaginationModule,
   AngularFireModule.initializeApp(environment.firebase),
   AngularFireDatabaseModule,
+  AngularFireAuthModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

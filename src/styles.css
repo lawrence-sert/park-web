@@ -554,7 +554,7 @@ fieldset[disabled] .s-btn {
 .s-form-v3__input {
   position: relative;
   height: 3.125rem;
-  font-size: 0.8125rem;
+  font-size: 14px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.7);
   border: none;
@@ -563,7 +563,6 @@ fieldset[disabled] .s-btn {
   box-shadow: none;
   border-radius: 0;
   letter-spacing: .1rem;
-  text-transform: uppercase;
   padding: 0 1.25rem 0 0;
   transition-duration: 300ms;
   transition-property: all;

@@ -1,1 +1,76 @@
-<p>sign-up works!</p>
+        <!--========== PROMO BLOCK ==========-->
+        <div class="s-promo-block-v1 g-bg-color--primary-to-blueviolet-ltr g-fullheight--md">
+          <div class="container g-ver-center--md g-padding-y-100--xs">
+            <div class="row g-hor-centered-row--md g-margin-t-30--xs g-margin-t-20--sm">
+              <div class="col-lg-6 col-sm-6 g-hor-centered-row__col g-text-center--xs g-text-left--md g-margin-b-60--xs g-margin-b-0--md">
+                <div class="s-promo-block-v1__square-effect g-margin-b-60--xs">
+                  <h1 class="g-font-size-32--xs g-font-size-45--sm g-font-size-50--lg g-color--white">From The Farm<br>To Your Door Step</h1>
+                  <p class="g-font-size-20--xs g-font-size-26--md g-color--white g-margin-b-0--xs">Lorem ipsum dolor sit amet<br>dolor sit amet.</p>
+                </div>
+                <span class="g-display-block--xs g-display-inline-block--lg g-margin-b-10--xs g-margin-b-10--lg">
+                  <a href="#" class="s-btn s-btn--xs s-btn--white-brd g-padding-x-30--xs g-radius--50">
+                    <span class="s-btn__element--left">
+                      <i class="g-font-size-32--xs ti-apple"></i>
+                    </span>
+                    <span class="s-btn__element--right g-padding-x-10--xs">
+                      <span class="g-display-block--xs g-font-size-11--xs">Download on the</span>
+                      <span class="g-font-size-16--xs">App Store</span>
+                    </span>
+                  </a>
+                </span>
+                <span class="g-padding-x-0--xs g-padding-x-10--lg">
+                  <a href="#" class="s-btn s-btn--xs s-btn--white-brd g-padding-x-30--xs g-radius--50">
+                    <span class="s-btn__element--left">
+                      <i class="g-font-size-32--xs ti-android"></i>
+                    </span>
+                    <span class="s-btn__element--right g-padding-x-10--xs">
+                      <span class="g-display-block--xs g-font-size-11--xs">Download on</span>
+                      <span class="g-font-size-16--xs">Google Play</span>
+                    </span>
+                  </a>
+                </span>
+              </div>
+              <div class="col-lg-2"></div>
+              <div class="col-lg-4 col-sm-4 g-hor-centered-row__col">
+                <div class="wow fadeInUp" data-wow-duration=".3" data-wow-delay=".1s">
+                  <form class="center-block g-width-350--xs g-bg-color--white-opacity-lightest g-box-shadow__blueviolet-v1 g-padding-x-40--xs g-padding-y-60--xs g-radius--4">
+                    <div class="g-text-center--xs g-margin-b-40--xs">
+                      <h2 class="g-font-size-30--xs g-color--white">Sign up, it’s free!</h2>
+                    </div>
+                    <div class="formGroup g-margin-b-30--xs">
+                      <input type="email" class="form-control s-form-v3__input" placeholder="Email Address" #userEmail required>
+                    </div>
+                    <div class="formGroup g-margin-b-30--xs">
+                      <input type="password" class="form-control s-form-v3__input" placeholder="Password" #userPwd required>
+                    </div>
+                    <div class="formGroup g-text-center--xs">
+                      <input type="button" class="btn-block s-btn s-btn--md s-btn--white-bg g-radius--50 g-padding-x-50--xs g-margin-b-20--xs" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <a class="g-color--white g-font-size-14--xs" routerLink="/forgot">Forgot Password?</a>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-md-8 col-sm-8 col-xs-8">
+                        <h2 class="g-font-size-18--xs g-color--white">Already A Patron?</h2>
+                        <p class="g-font-size-12--xs g-color--white">We happy to see you back. Please</p>
+                      </div>
+                      <div class="col-md-4 col-sm-4 col-xs-4">
+                        <button routerLink="/sign-in" class="btn-block s-btn s-btn--sm s-btn--white-bg g-radius--50 g-padding-x-20--xs g-margin-b-20--xs g-font-size-14--xs"
+                        >Login</button>
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--========== END PROMO BLOCK ==========-->
+
