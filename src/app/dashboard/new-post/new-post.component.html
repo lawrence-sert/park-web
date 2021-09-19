@@ -52,10 +52,10 @@
 							class="form-control"
 							formControlName="post_category" 
 							>
-							<option value="Farmers">Farmers</option>
-							<option value="Vendors">Vendors</option>
-							<option value="Agriculture">Agriculture</option>
-							<option value="Cooking">Cooking</option>
+							<option *ngFor="let postc of postsCat" value="{{postc.post_category}}">
+									{{postc.postc_title}}
+								</option>
+
 						</select>
 					</div>
 				</div>
@@ -82,14 +82,82 @@
 			</div>
 
 		</form>
+
 	</div>
 
 	<div class="col-md-4 col-sm-12 col-xs-12">
-			<ul class="list-group">
-		<a [routerLink]="['/post', post.id]" class="list-group-item list-group-item-action" *ngFor="let post of posts; index as i">
-			{{post.post_title}}
-		</a>
-	</ul>
+		<ul class="list-group">
+			<a [routerLink]="['/post', post.id]" class="list-group-item list-group-item-action" *ngFor="let post of posts; index as i">
+				{{post.post_title}}
+			</a>
+		</ul>
+	</div>
+</div>
+
+
+<div class="row">
+
+	<div class="col-md-8 col-sm-8 col-xs-12">
+		<form [formGroup]="postCatForm" (ngSubmit)="onSubmitCat()" novalidate>
+
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="form-group">
+						<label for="exampleInputEmail1">Post Cat Title</label>
+						<input 
+						type="text" class="form-control" 
+						formControlName="postc_title"
+						placeholder="Post Cat Title"
+						>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="form-group">
+						<label for="exampleInputEmail1">Post Category</label>
+						<input 
+						type="text" class="form-control" 
+						formControlName="post_category"
+						placeholder="Post Category"
+						>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="form-group">
+						<label for="exampleFormControlTextarea3">Post Cat Description</label>
+						<textarea 
+						class="form-control" 
+						id="exampleFormControlTextarea3" 
+						rows="10"
+						formControlName="postc_description" 
+						></textarea>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<button type="submit" class="text-uppercase s-btn s-btn--sm btn-block s-btn--primary-bg g-radius--3 g-padding-x-50--xs">Create Post</button>
+				</div>
+			</div>
+
+
+
+		</form>
+	</div>
+
+
+	<div class="col-md-4 col-sm-4 col-xs-12">
+		<ul class="list-group">
+			<a [routerLink]="['/post-cat', postCat.id]" class="list-group-item list-group-item-action" *ngFor="let postCat of postsCat; index as i">
+				{{postCat.postc_title}}
+			</a>
+		</ul>
 	</div>
 </div>
 

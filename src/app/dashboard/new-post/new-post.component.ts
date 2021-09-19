@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { PostsService } from 'src/app/dashboard/services/posts.service';
 import { Posts } from 'src/app/dashboard/models/posts.model';
+import { PostsCats } from 'src/app/dashboard/models/posts-cats.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -15,6 +16,9 @@ export class NewPostComponent implements OnInit {
 
 	public postForm: FormGroup;
 	posts:any;
+	postsCat:any;
+
+	public postCatForm: FormGroup;
 
 	constructor(
 		public db: AngularFirestore,
@@ -27,15 +31,30 @@ export class NewPostComponent implements OnInit {
 			post_main: [''],
 			post_title: [''],
 		});
+
+		this.postCatForm = this.formBuilder.group({
+			postc_title: [''],
+			postc_description: [''],
+			post_category: [''],
+		});
 	}
 
 	ngOnInit(): void {
-		this.postService.getRecipes().subscribe((data) => {
+		this.postService.getPosts().subscribe((data) => {
 			this.posts = data.map((e) => {
 				return {
 					id: e.payload.doc.id,
 					...(e.payload.doc.data() as {}),
 				} as Posts;
+			});
+		});
+
+		this.postService.getPostCats().subscribe((data) => {
+			this.postsCat = data.map((e) => {
+				return {
+					id: e.payload.doc.id,
+					...(e.payload.doc.data() as {}),
+				} as PostsCats;
 			});
 		});
 	}
@@ -56,10 +75,25 @@ export class NewPostComponent implements OnInit {
 		return this.postForm.get('post_title')
 	}
 
+	get postc_title(){
+		return this.postCatForm.get('postc_title')
+	}
+
+	get postc_description(){
+		return this.postCatForm.get('postc_description')
+	}
+
+
+
 
 	onSubmit() {
 		console.log(this.postForm.value);
 		this.postService.createPost(this.postForm.value);
+	}
+
+	onSubmitCat() {
+		console.log(this.postCatForm.value);
+		this.postService.createPostCat(this.postCatForm.value);
 	}
 
 }

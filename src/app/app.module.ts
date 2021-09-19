@@ -50,6 +50,9 @@ import { NewTipComponent } from './dashboard/new-tip/new-tip.component';
 import { TipComponent } from './dashboard/tip/tip.component';
 import { NewProductComponent } from './dashboard/new-product/new-product.component';
 import { ProductComponent } from './dashboard/product/product.component';
+import { NewComboComponent } from './dashboard/new-combo/new-combo.component';
+import { ComboComponent } from './dashboard/combo/combo.component';
+import { PostCatComponent } from './dashboard/post-cat/post-cat.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +86,10 @@ import { ProductComponent } from './dashboard/product/product.component';
   NewTipComponent,
   TipComponent,
   NewProductComponent,
-  ProductComponent
+  ProductComponent,
+  NewComboComponent,
+  ComboComponent,
+  PostCatComponent
   ],
   imports: [
     BrowserModule,

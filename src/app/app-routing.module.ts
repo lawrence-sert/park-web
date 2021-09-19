@@ -49,6 +49,11 @@ import { TipComponent } from 'src/app/dashboard/tip/tip.component';
 import { NewProductComponent } from 'src/app/dashboard/new-product/new-product.component';
 import { ProductComponent } from 'src/app/dashboard/product/product.component';
 
+import { NewComboComponent } from 'src/app/dashboard/new-combo/new-combo.component';
+import { ComboComponent } from 'src/app/dashboard/combo/combo.component';
+
+import { PostCatComponent } from 'src/app/dashboard/post-cat/post-cat.component';
+
 //Page Error
 import { NoPageFoundComponent } from 'src/app/main/no-page-found/no-page-found.component';
 
@@ -99,6 +104,11 @@ const routes: Routes = [
 
 	{ path: 'new-product', component: NewProductComponent, data: {title: 'New Product'} },
 	{ path: 'product/:productID', component: ProductComponent, data: {title: 'Product'} },
+
+	{ path: 'new-combo', component: NewComboComponent, data: {title: 'New Combo'} },
+	{ path: 'combo/:comboID', component: ComboComponent, data: {title: 'Combo'} },
+
+	{ path: 'post-cat/:postCatID', component: PostCatComponent, data: {title: 'Combo'} },
 
 	//error
 	{ path: '**', component: NoPageFoundComponent, data: {title: 'Page Error'} },
