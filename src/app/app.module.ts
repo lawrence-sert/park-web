@@ -42,6 +42,14 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './auth/verify-email/verify-email.component';
+import { NewRecipeComponent } from './dashboard/new-recipe/new-recipe.component';
+import { RecipeComponent } from './dashboard/recipe/recipe.component';
+import { NewPostComponent } from './dashboard/new-post/new-post.component';
+import { PostComponent } from './dashboard/post/post.component';
+import { NewTipComponent } from './dashboard/new-tip/new-tip.component';
+import { TipComponent } from './dashboard/tip/tip.component';
+import { NewProductComponent } from './dashboard/new-product/new-product.component';
+import { ProductComponent } from './dashboard/product/product.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +75,15 @@ import { VerifyEmailComponent } from './auth/verify-email/verify-email.component
   SignInComponent,
   SignUpComponent,
   ForgotPasswordComponent,
-  VerifyEmailComponent
+  VerifyEmailComponent,
+  NewRecipeComponent,
+  RecipeComponent,
+  NewPostComponent,
+  PostComponent,
+  NewTipComponent,
+  TipComponent,
+  NewProductComponent,
+  ProductComponent
   ],
   imports: [
     BrowserModule,

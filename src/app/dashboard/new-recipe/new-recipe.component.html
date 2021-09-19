@@ -1,0 +1,164 @@
+<!--========== PROMO BLOCK ==========-->
+<div class="js__parallax-window" style="background: url(assets/img/park&pick-market-place.png) 50% 0 no-repeat fixed;">
+	<div class="g-container--md g-text-center--xs g-padding-y-150--xs">
+		<div class="g-margin-b-60--xs">
+			<h1 class="g-font-size-30--xs g-font-size-40--sm g-font-size-50--md g-color--primary g-letter-spacing--1 g-margin-b-30--xs">Market Place</h1>
+		</div>
+	</div>
+</div>
+<!--========== END PROMO BLOCK ==========-->
+
+<!-- About -->
+<div class="container g-padding-y-40--xs g-padding-y-60--sm">
+
+	<div class="g-text-center--xs g-margin-b-60--xs">
+		<p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--primary g-letter-spacing--2 g-margin-b-25--xs">Park&Pick</p>
+		<h2 class="g-font-size-32--xs g-font-size-36--md">Create New Recipe</h2>
+	</div>
+
+
+
+	<div class="row">
+		<div class="col-md-9 col-sm-9 col-xs-12">
+			<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" novalidate>
+
+				<div class="row">
+					<div class="col-md-9 col-sm-9 col-xs-9">
+						<div class="form-group">
+							<label for="exampleInputEmail1">Recipe Name</label>
+							<input 
+							type="text" class="form-control" 
+							aria-describedby="emailHelp" 
+							formControlName="recipe_name"
+							placeholder="Recipe Name"
+							>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-sm-3 col-xs-3">
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Recipe Category</label>
+							<select 
+							class="form-control"
+							formControlName="recipe_category" 
+							>
+							<option value="1">Breakfast</option>
+							<option value="2">Lunch</option>
+							<option value="3">Supper</option>
+							<option value="4">Special</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4 col-sm-4 col-xs-4">
+					<div class="form-group">
+						<label for="exampleInputEmail1">Recipe Time</label>
+						<input 
+						type="text" class="form-control" 
+						aria-describedby="emailHelp" 
+						formControlName="recipe_time"
+						placeholder="Recipe Time"
+						>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-4">
+					<div class="form-group">
+						<label for="exampleInputEmail1">Recipe People</label>
+						<input 
+						type="text" class="form-control" 
+						aria-describedby="emailHelp" 
+						formControlName="recipe_people"
+						placeholder="Recipe People"
+						>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-4">
+					<div class="form-group">
+						<label for="exampleFormControlSelect1">Recipe Level</label>
+						<select 
+						class="form-control"
+						formControlName="recipe_level" 
+						>
+						<option value="1">Easy</option>
+						<option value="2">Intermediate</option>
+						<option value="3">Hard</option>
+						<option value="4">Professional</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-6">
+				<div class="form-group">
+					<label for="exampleFormControlSelect1">Recipe Chef</label>
+					<select 
+					class="form-control"
+					formControlName="recipe_chef" 
+					>
+					<option value="1">Lawrence</option>
+					<option value="2">Tanaka</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-6 col-xs-6">
+			<div class="custom-file">
+				<input 
+				type="file" 
+				class="custom-file-input" 
+				id="customFile"
+				id="recipe_image"
+				>
+				<label class="custom-file-label" for="customFile">Choose file</label>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="form-group">
+				<label for="exampleFormControlTextarea3">Rounded corners</label>
+				<textarea 
+				class="form-control" 
+				id="exampleFormControlTextarea3" 
+				rows="7"
+				formControlName="recipe_description" 
+				></textarea>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<button type="submit" class="text-uppercase s-btn s-btn--sm btn-block s-btn--primary-bg g-radius--3 g-padding-x-50--xs">Create Recipe</button>
+		</div>
+	</div>
+
+
+
+</form>
+</div>
+
+
+<!-- form results -->
+<div class="col-md-3 col-sm-3 col-xs-12">
+	
+	<ul class="list-group">
+		<a [routerLink]="['/recipe', recipe.id]" class="list-group-item list-group-item-action" *ngFor="let recipe of recipes; index as i">
+			{{recipe.recipe_name}}
+		</a>
+	</ul>
+</div>
+</div>
+
+
+
+
+
+
+</div>
+<!-- End About -->

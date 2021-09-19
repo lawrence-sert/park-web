@@ -1,0 +1,61 @@
+<!--========== PROMO BLOCK ==========-->
+<div class="js__parallax-window" style="background: url(assets/img/park&pick-market-place.png) 50% 0 no-repeat fixed;">
+	<div class="g-container--md g-text-center--xs g-padding-y-100--xs">
+		<div class="g-margin-b-60--xs">
+			<h1 class="g-font-size-30--xs g-font-size-40--sm g-font-size-50--md g-color--primary g-letter-spacing--1 g-margin-b-30--xs">Post</h1>
+		</div>
+	</div>
+</div>
+<!--========== END PROMO BLOCK ==========-->
+
+
+<div class="container g-padding-y-40--xs g-padding-y-60--sm">
+
+	<div *ngFor="let product of product$ | async; index as i">
+
+		<div class="g-text-center--xs g-margin-b-60--xs">
+			<p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--primary g-letter-spacing--2 g-margin-b-25--xs">Park&Pick</p>
+			<h2 class="g-font-size-32--xs g-font-size-36--md">{{product.category}}</h2>
+		</div>
+
+		<div class="row">
+
+			<div class="col-md-8 col-sm-8 col-xs-12">
+				
+			</div>
+
+			<div class="col-md-4 col-sm-4 col-xs-12">
+
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+
+						<img src="{{product.image}}" class="img-responsive">
+
+						<label class="btn btn-default btn-file" *ngIf="!isLoading  && !isLoaded">
+							<i class="ti-gallery g-font-size-18--xs g-color--primary"></i>
+							<h2 class="g-color--primary g-font-size-14--xs">Select File</h2>
+							<input type="file" style="display: none;" (change)="uploadImagetoFirebase($event)" id="file-input"  accept="image/png, image/jpg" required>
+						</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<ul class="list-group">
+							<li class="list-group-item">Date  <span class="pull-right">{{product.date.toDate() | date:'dd MMM yyyy h:mm'}}</span></li>
+							<li class="list-group-item">Name <span class="pull-right">{{product.item}}</span></li>
+							<li class="list-group-item">Caption <span class="pull-right">{{product.caption}}</span></li>
+							<li class="list-group-item">Price <span class="pull-right">{{product.price}}</span></li>
+							<li class="list-group-item">Comments <span class="pull-right">{{product.comment}}</span></li>
+							<li class="list-group-item">Rating <span class="pull-right">{{product.rating}}</span></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

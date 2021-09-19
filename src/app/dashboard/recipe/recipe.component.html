@@ -1,0 +1,258 @@
+<!--========== PROMO BLOCK ==========-->
+<div class="js__parallax-window" style="background: url(assets/img/park&pick-market-place.png) 50% 0 no-repeat fixed;">
+	<div class="g-container--md g-text-center--xs g-padding-y-100--xs">
+		<div class="g-margin-b-60--xs">
+			<h1 class="g-font-size-30--xs g-font-size-40--sm g-font-size-50--md g-color--primary g-letter-spacing--1 g-margin-b-30--xs">Recipe</h1>
+		</div>
+	</div>
+</div>
+<!--========== END PROMO BLOCK ==========-->
+
+
+<!-- About -->
+<div class="container g-padding-y-40--xs g-padding-y-60--sm">
+
+	<div *ngFor="let recipe of recipe$ | async; index as i">
+
+		<div class="row">
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				<h3 class="g-font-size-20--xs g-color--primary">{{recipe.recipe_name}}</h3>
+
+				<p class="g-font-size-12--xs">{{recipe.recipe_description}}</p>
+
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<h3 class="g-font-size-16--xs g-color--primary">Ingredients
+							<span class="pull-right" data-toggle="modal" data-target="#Ingredient">
+								<i class="ti-plus g-font-size-18--xs g-color--primary"></i>
+							</span>
+						</h3>
+
+						<ul>
+							<li *ngFor="let ingredient of allIngredients">{{ingredient.ingredient_name}}</li>
+						</ul>
+
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<h3 class="g-font-size-16--xs g-color--primary">Method
+							<span class="pull-right" data-toggle="modal" data-target="#Method">
+								<i class="ti-plus g-font-size-18--xs g-color--primary"></i>
+							</span>
+						</h3>
+
+						<ul class="list-group">
+							<li class="list-group-item" *ngFor="let method of allMethods">
+								<span class="g-color--primary">{{method.method_number}}.</span> 
+								{{method.method_main}}
+							</li>
+						</ul>
+
+
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<h3 class="g-font-size-16--xs g-color--primary">Nutrients
+							<span class="pull-right" data-toggle="modal" data-target="#Nutrients">
+								<i class="ti-plus g-font-size-18--xs g-color--primary"></i>
+							</span>
+						</h3>
+					</div>
+
+					<div class="row">
+						<div class="col-md-3 col-sm-3 col-xs-3" *ngFor="let nutrients of allNutrients">
+							{{nutrients.nutrition_name}}
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<!-- recipe image here -->
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+
+						<img src="{{recipe.recipe_image}}" class="img-responsive" alt="{{recipe.recipe_name}}">
+
+						<label class="btn btn-default btn-file" *ngIf="!isLoading  && !isLoaded">
+							<i class="ti-gallery g-font-size-18--xs g-color--primary"></i>
+							<h2 class="g-color--primary g-font-size-14--xs">Select File</h2>
+							<input type="file" style="display: none;" (change)="uploadImagetoFirebase($event)" id="file-input"  accept="image/png, image/jpg" required>
+						</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<ul class="list-group">
+							<li class="list-group-item">Recipe Level <span class="pull-right">{{recipe.recipe_level}}</span></li>
+							<li class="list-group-item">Recipe People <span class="pull-right">{{recipe.recipe_people}}</span></li>
+							<li class="list-group-item">Recipe Time <span class="pull-right">{{recipe.recipe_time}}</span></li>
+							<li class="list-group-item">Recipe Category <span class="pull-right">{{recipe.recipe_category}}</span></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="Ingredient" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<form [formGroup]="ingredientForm" (ngSubmit)="onSubmit()" novalidate>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Add Ingredient</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="form-group">
+								<label for="exampleInputEmail1">Ingredient Name</label>
+								<input 
+								type="text" class="form-control" 
+								aria-describedby="emailHelp" 
+								formControlName="ingredient_name"
+								placeholder="Ingredient Name"
+								>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="submit" class="text-uppercase s-btn s-btn--sm btn-block s-btn--primary-bg g-radius--3 g-padding-x-50--xs">Add Ingredient</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="Method" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<form [formGroup]="methodForm" (ngSubmit)="onSubmitMethod()" novalidate>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Add Method</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<div class="row">
+						<div class="col-md-2 col-sm-2 col-xs-2">
+							<div class="form-group">
+								<label for="exampleInputEmail1">NO.</label>
+								<input 
+								type="text" 
+								class="form-control" 
+								formControlName="method_number"
+								placeholder="NO."
+								>
+							</div>
+						</div>
+
+						<div class="col-md-10 col-sm-10 col-xs-10">
+							<div class="form-group">
+								<label for="exampleInputEmail1">Method Main</label>
+								<input 
+								type="text" 
+								class="form-control" 
+								formControlName="method_main"
+								placeholder="Method Main"
+								>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="submit" class="text-uppercase s-btn s-btn--sm btn-block s-btn--primary-bg g-radius--3 g-padding-x-50--xs">Add Method</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="Nutrients" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<form [formGroup]="nutrientsForm" (ngSubmit)="onSubmitNutrients()" novalidate>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Add Nutrients</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<div class="row">
+
+						<div class="col-md-9 col-sm-9 col-xs-9">
+							<div class="form-group">
+								<label for="exampleInputEmail1">Nutrition Name</label>
+								<input 
+								type="text" class="form-control" 
+								formControlName="nutrition_name"
+								placeholder="Nutrition Name"
+								>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-sm-3 col-xs-3">
+							<div class="form-group">
+								<label for="exampleInputEmail1">Nutrition Value</label>
+								<input 
+								type="text" class="form-control" 
+								formControlName="nutrition_value"
+								placeholder="Value"
+								>
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="form-group">
+								<label for="exampleFormControlTextarea3">Recipe Description</label>
+								<textarea 
+								class="form-control" 
+								id="exampleFormControlTextarea3" 
+								rows="7"
+								formControlName="nutrition_description" 
+								></textarea>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="submit" class="text-uppercase s-btn s-btn--sm btn-block s-btn--primary-bg g-radius--3 g-padding-x-50--xs">Add Nutrition</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

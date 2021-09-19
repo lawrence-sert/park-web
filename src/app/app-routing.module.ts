@@ -36,6 +36,19 @@ import { ForgotPasswordComponent } from 'src/app/auth/forgot-password/forgot-pas
 import { VerifyEmailComponent } from 'src/app/auth/verify-email/verify-email.component';
 import { AuthGuard } from "src/app/guards/auth.guard";
 
+//Admin Pages
+import { NewRecipeComponent } from 'src/app/dashboard/new-recipe/new-recipe.component';
+import { RecipeComponent } from 'src/app/dashboard/recipe/recipe.component';
+
+import { NewPostComponent } from 'src/app/dashboard/new-post/new-post.component';
+import { PostComponent } from 'src/app/dashboard/post/post.component';
+
+import { NewTipComponent } from 'src/app/dashboard/new-tip/new-tip.component';
+import { TipComponent } from 'src/app/dashboard/tip/tip.component';
+
+import { NewProductComponent } from 'src/app/dashboard/new-product/new-product.component';
+import { ProductComponent } from 'src/app/dashboard/product/product.component';
+
 //Page Error
 import { NoPageFoundComponent } from 'src/app/main/no-page-found/no-page-found.component';
 
@@ -68,11 +81,24 @@ const routes: Routes = [
 	{ path: 'shop', component: ShopComponent, data: {title: 'Shop'} },
 
 	//auth 
-	{ path: 'dashboard', component: SignInComponent, canActivate: [AuthGuard], data: {title: 'Dashboard'} },
+	{ path: 'dashboard', component: DashboardComponent, data: {title: 'Dashboard'} },
 	{ path: 'sign-in', component: SignInComponent, data: {title: 'Sign In'} },
 	{ path: 'sign-up', component: SignUpComponent, data: {title: 'Sign Up'} },
 	{ path: 'forgot', component: SignUpComponent, data: {title: 'Forgot Password'} },
 	{ path: 'verify', component: SignUpComponent, data: {title: 'Verify Email'} },
+
+	//admin 
+	{ path: 'new-recipe', component: NewRecipeComponent, data: {title: 'New Recipes'} },
+	{ path: 'recipe/:recipeID', component: RecipeComponent, data: {title: 'Recipe'} },
+
+	{ path: 'new-post', component: NewPostComponent, data: {title: 'New Post'} },
+	{ path: 'post/:postID', component: PostComponent, data: {title: 'Post'} },
+
+	{ path: 'new-tip', component: NewTipComponent, data: {title: 'New Tip'} },
+	{ path: 'tip/:tipID', component: TipComponent, data: {title: 'Tip'} },
+
+	{ path: 'new-product', component: NewProductComponent, data: {title: 'New Product'} },
+	{ path: 'product/:productID', component: ProductComponent, data: {title: 'Product'} },
 
 	//error
 	{ path: '**', component: NoPageFoundComponent, data: {title: 'Page Error'} },

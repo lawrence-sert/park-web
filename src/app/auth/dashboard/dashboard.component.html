@@ -1,57 +1,23 @@
-<!-- Top navigation -->
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0">
-    <img class="brand-logo" src="assets/logo-positronx-white.svg" alt="positronX.io Logo">
-  </a>
-</nav>
-
-<!-- Sidebar navigation -->
-<div class="container-fluid">
-  <div class="row">
-
-    <nav class="col-md-2 d-md-block bg-light sidebar">
-      <div class="sidebar-sticky">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active">
-              <i class="fas fa-user"></i>User Profile
-            </a>
-          </li>
-          <!-- Calling SignOut() Api from AuthService -->
-          <li class="nav-item">
-            <a class="nav-link" (click)="authService.SignOut()">
-              <i class="fas fa-sign-out-alt"></i>Log out
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- Main content -->
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <div class="inner-adjust">
-
-        <div class="pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">User Profile</h1>
-        </div>
-        <!-- Show user data when logged in -->
-        <div class="row" *ngIf="authService.userData as user">
-          <div class="col-md-12">
-            <div class="media">
-              <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
-                alt="{{user.displayName}}">
-              <div class="media-body">
-                <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                <p>User ID: <strong>{{user.uid}}</strong></p>
-                <p>Email: <strong>{{user.email}}</strong></p>
-                <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </main>
-
+<!--========== PROMO BLOCK ==========-->
+<div class="js__parallax-window" style="background: url(assets/img/park&pick-market-place.png) 50% 0 no-repeat fixed;">
+  <div class="g-container--md g-text-center--xs g-padding-y-150--xs">
+    <div class="g-margin-b-60--xs">
+      <h1 class="g-font-size-30--xs g-font-size-40--sm g-font-size-50--md g-color--primary g-letter-spacing--1 g-margin-b-30--xs">Market Place</h1>
+    </div>
   </div>
 </div>
+<!--========== END PROMO BLOCK ==========-->
+
+<!-- About -->
+<div class="container g-padding-y-40--xs g-padding-y-60--sm">
+
+  <div class="g-text-center--xs g-margin-b-60--xs">
+    <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--primary g-letter-spacing--2 g-margin-b-25--xs">Park&Pick</p>
+    <h2 class="g-font-size-32--xs g-font-size-36--md">Service delivery you can count on</h2>
+  </div>
+
+ 
+
+
+</div>
+<!-- End About -->
