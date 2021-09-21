@@ -53,6 +53,9 @@ import { ProductComponent } from './dashboard/product/product.component';
 import { NewComboComponent } from './dashboard/new-combo/new-combo.component';
 import { ComboComponent } from './dashboard/combo/combo.component';
 import { PostCatComponent } from './dashboard/post-cat/post-cat.component';
+import { ProductCatComponent } from './dashboard/product-cat/product-cat.component';
+import { PromotionComponent } from './dashboard/promotion/promotion.component';
+import { NewPromotionComponent } from './dashboard/new-promotion/new-promotion.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +92,10 @@ import { PostCatComponent } from './dashboard/post-cat/post-cat.component';
   ProductComponent,
   NewComboComponent,
   ComboComponent,
-  PostCatComponent
+  PostCatComponent,
+  ProductCatComponent,
+  PromotionComponent,
+  NewPromotionComponent
   ],
   imports: [
     BrowserModule,

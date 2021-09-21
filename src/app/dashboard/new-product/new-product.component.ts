@@ -14,7 +14,9 @@ import { map } from 'rxjs/operators';
 export class NewProductComponent implements OnInit {
 
 	public productForm: FormGroup;
+	public productCatForm: FormGroup;
 	products:any;
+	products_categories:any;
 
 	constructor(
 		public db: AngularFirestore,
@@ -28,12 +30,26 @@ export class NewProductComponent implements OnInit {
 			item: [''],
 			price: ['']
 		});
+
+		this.productCatForm = this.formBuilder.group({
+			category_name: [''],
+			category_description: ['']
+		});
 	}
 
 	ngOnInit(): void {
 
 		this.productsService.getProducts().subscribe((data) => {
 			this.products = data.map((e) => {
+				return {
+					id: e.payload.doc.id,
+					...(e.payload.doc.data() as {}),
+				} as Products;
+			});
+		});
+
+		this.productsService.getProductCategories().subscribe((data) => {
+			this.products_categories = data.map((e) => {
 				return {
 					id: e.payload.doc.id,
 					...(e.payload.doc.data() as {}),
@@ -63,10 +79,23 @@ export class NewProductComponent implements OnInit {
 		return this.productForm.get('price')
 	}
 
+	get category_name(){
+		return this.productCatForm.get('category_name')
+	}
+
+	get category_description(){
+		return this.productCatForm.get('category_description')
+	}
+
 
 	onSubmit() {
 		console.log(this.productForm.value);
 		this.productsService.createProduct(this.productForm.value);
+	}
+
+	onSubmitProductCat() {
+		console.log(this.productCatForm.value);
+		this.productsService.createProductCat(this.productCatForm.value);
 	}
 
 }

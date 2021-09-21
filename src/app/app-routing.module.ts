@@ -52,7 +52,12 @@ import { ProductComponent } from 'src/app/dashboard/product/product.component';
 import { NewComboComponent } from 'src/app/dashboard/new-combo/new-combo.component';
 import { ComboComponent } from 'src/app/dashboard/combo/combo.component';
 
+import { NewPromotionComponent } from 'src/app/dashboard/new-promotion/new-promotion.component';
+import { PromotionComponent } from 'src/app/dashboard/promotion/promotion.component';
+
 import { PostCatComponent } from 'src/app/dashboard/post-cat/post-cat.component';
+
+import { ProductCatComponent } from 'src/app/dashboard/product-cat/product-cat.component';
 
 //Page Error
 import { NoPageFoundComponent } from 'src/app/main/no-page-found/no-page-found.component';
@@ -108,7 +113,12 @@ const routes: Routes = [
 	{ path: 'new-combo', component: NewComboComponent, data: {title: 'New Combo'} },
 	{ path: 'combo/:comboID', component: ComboComponent, data: {title: 'Combo'} },
 
+	{ path: 'new-promotion', component: NewPromotionComponent, data: {title: 'New Promotion'} },
+	{ path: 'promotion/:promotionID', component: PromotionComponent, data: {title: 'Promotion'} },
+
 	{ path: 'post-cat/:postCatID', component: PostCatComponent, data: {title: 'Combo'} },
+
+	{ path: 'product-cat/:productCatID', component: ProductCatComponent, data: {title: 'Product Category'} },
 
 	//error
 	{ path: '**', component: NoPageFoundComponent, data: {title: 'Page Error'} },
