@@ -56,6 +56,15 @@ import { PostCatComponent } from './dashboard/post-cat/post-cat.component';
 import { ProductCatComponent } from './dashboard/product-cat/product-cat.component';
 import { PromotionComponent } from './dashboard/promotion/promotion.component';
 import { NewPromotionComponent } from './dashboard/new-promotion/new-promotion.component';
+import { FaqsComponent } from './dashboard/faqs/faqs.component';
+import { NewFaqsComponent } from './dashboard/new-faqs/new-faqs.component';
+import { NewTutorialComponent } from './dashboard/new-tutorial/new-tutorial.component';
+import { TutorialComponent } from './dashboard/tutorial/tutorial.component';
+import { MessagesComponent } from './dashboard/messages/messages.component';
+import { MessageComponent } from './dashboard/message/message.component';
+import { PaymentsComponent } from './dashboard/payments/payments.component';
+import { PaymentComponent } from './dashboard/payment/payment.component';
+
 
 @NgModule({
   declarations: [
@@ -95,7 +104,15 @@ import { NewPromotionComponent } from './dashboard/new-promotion/new-promotion.c
   PostCatComponent,
   ProductCatComponent,
   PromotionComponent,
-  NewPromotionComponent
+  NewPromotionComponent,
+  FaqsComponent,
+  NewFaqsComponent,
+  NewTutorialComponent,
+  TutorialComponent,
+  MessagesComponent,
+  MessageComponent,
+  PaymentsComponent,
+  PaymentComponent
   ],
   imports: [
     BrowserModule,

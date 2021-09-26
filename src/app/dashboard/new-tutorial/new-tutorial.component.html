@@ -1,0 +1,77 @@
+<!--========== PROMO BLOCK ==========-->
+<div class="js__parallax-window" style="background: url(assets/img/park&pick-market-place.png) 50% 0 no-repeat fixed;">
+	<div class="g-container--md g-text-center--xs g-padding-y-150--xs">
+		<div class="g-margin-b-60--xs">
+			<h1 class="g-font-size-30--xs g-font-size-40--sm g-font-size-50--md g-color--primary g-letter-spacing--1 g-margin-b-30--xs">New Product</h1>
+		</div>
+	</div>
+</div>
+<!--========== END PROMO BLOCK ==========-->
+
+
+<!-- Posts -->
+<div class="container g-padding-y-40--xs g-padding-y-60--sm">
+
+	<div class="g-text-center--xs g-margin-b-60--xs">
+		<p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--primary g-letter-spacing--2 g-margin-b-25--xs">Park&Pick</p>
+		<h2 class="g-font-size-32--xs g-font-size-36--md">Create A New Tutorial</h2>
+	</div>
+
+	<div class="row">
+		<div class="col-md-8 col-sm-8 col-xs-12">
+			
+			<form [formGroup]="tutorialForm" (ngSubmit)="onSubmit()" novalidate>
+
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="form-group">
+							<label for="exampleInputEmail1">tutorial Name</label>
+							<input 
+							type="text" class="form-control" 
+							formControlName="tutorial_title"
+							placeholder="Tutorial"
+							>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Tutorial Category</label>
+							<select 
+							class="form-control"
+							formControlName="caption" 
+							>
+							<option  value="account">Account</option>
+							<option  value="basket">Basket</option>
+							<option  value="post">Post</option>
+							<option  value="recipe">Recipes</option>
+							<option  value="competition">Competition</option>
+							<option  value="video">Videos</option>
+							<option  value="tutorial_category">E Hailing</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<button type="submit" class="text-uppercase s-btn s-btn--sm btn-block s-btn--primary-bg g-radius--3 g-padding-x-50--xs">Create Tutorial</button>
+				</div>
+			</div>
+		</form>
+
+	</div>
+
+
+	<div class="col-md-4 col-sm-4 col-xs-12">
+		<ul class="list-group">
+			<a [routerLink]="['/tutorial', tutorial.id]" class="list-group-item list-group-item-action" *ngFor="let tutorial of tutorials; index as i">
+				{{tutorial.tutorial_title}}
+			</a>
+		</ul>
+	</div>
+</div>
+
+</div>

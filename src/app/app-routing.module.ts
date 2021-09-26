@@ -55,9 +55,21 @@ import { ComboComponent } from 'src/app/dashboard/combo/combo.component';
 import { NewPromotionComponent } from 'src/app/dashboard/new-promotion/new-promotion.component';
 import { PromotionComponent } from 'src/app/dashboard/promotion/promotion.component';
 
+import { NewFaqsComponent } from 'src/app/dashboard/new-faqs/new-faqs.component';
+import { FaqsComponent } from 'src/app/dashboard/faqs/faqs.component';
+
+import { NewTutorialComponent } from 'src/app/dashboard/new-tutorial/new-tutorial.component';
+import { TutorialComponent } from 'src/app/dashboard/tutorial/tutorial.component';
+
 import { PostCatComponent } from 'src/app/dashboard/post-cat/post-cat.component';
 
 import { ProductCatComponent } from 'src/app/dashboard/product-cat/product-cat.component';
+
+import { MessagesComponent } from 'src/app/dashboard/messages/messages.component';
+import { MessageComponent } from 'src/app/dashboard/message/message.component';
+
+import { PaymentsComponent } from 'src/app/dashboard/payments/payments.component';
+import { PaymentComponent } from 'src/app/dashboard/payment/payment.component';
 
 //Page Error
 import { NoPageFoundComponent } from 'src/app/main/no-page-found/no-page-found.component';
@@ -116,9 +128,21 @@ const routes: Routes = [
 	{ path: 'new-promotion', component: NewPromotionComponent, data: {title: 'New Promotion'} },
 	{ path: 'promotion/:promotionID', component: PromotionComponent, data: {title: 'Promotion'} },
 
+	{ path: 'new-faqs', component: NewFaqsComponent, data: {title: 'New FAQ'} },
+	{ path: 'faqs/:faqID', component: FaqsComponent, data: {title: 'FAQs'} },
+
+	{ path: 'new-tutorial', component: NewTutorialComponent, data: {title: 'New Tutorial'} },
+	{ path: 'tutorial/:tutorialID', component: TutorialComponent, data: {title: 'Tutorial'} },
+
 	{ path: 'post-cat/:postCatID', component: PostCatComponent, data: {title: 'Combo'} },
 
 	{ path: 'product-cat/:productCatID', component: ProductCatComponent, data: {title: 'Product Category'} },
+
+	{ path: 'messages', component: MessagesComponent, data: {title: 'Messages'} },
+	{ path: 'messages/:messageID', component: MessagesComponent, data: {title: 'Messages'} },
+
+	{ path: 'payments', component: PaymentsComponent, data: {title: 'payments'} },
+	{ path: 'payments/:paymentID', component: PaymentsComponent, data: {title: 'payments'} },
 
 	//error
 	{ path: '**', component: NoPageFoundComponent, data: {title: 'Page Error'} },
