@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Title, Meta } from '@angular/platform-browser';
 
+import { AngularFirestore } from '@angular/fire/firestore';
+
 @Component({
 	selector: 'app-home',
 	templateUrl: './home.component.html',
@@ -10,6 +12,9 @@ import { Title, Meta } from '@angular/platform-browser';
 export class HomeComponent implements OnInit {
 
 	title = 'Cook Africa';
+
+	posts: any;
+	postsCat: any;
 
 	constructor(
 		private toastr: ToastrService,

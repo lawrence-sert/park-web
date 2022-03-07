@@ -20,14 +20,15 @@ body {
   color: #222324;
   line-height: 1.6;
   background-color: #fff;
+  font-weight: 400;
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
-  font-family: 'Quicksand', sans-serif;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
   line-height: 1.2;
-  color: #242424;
+  color: #DE323A;
   margin-top: 0;
   margin-bottom: .5rem;
 }
@@ -48,7 +49,7 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-  color: #242424;
+  color: #DE323A;
   transition-duration: 200ms;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
@@ -100,12 +101,12 @@ em,
 li {
   font-size: 1rem;
   font-weight: 300;
-  color: #242424;
+  color: #DE323A;
 }
 
 em > a,
 li > a {
-  color: #242424;
+  color: #DE323A;
 }
 
 em > a:hover,
@@ -120,7 +121,7 @@ small {
 label {
   font-size: 0.8125rem;
   font-weight: 700;
-  color: #242424;
+  color: #DE323A;
   margin-bottom: .25rem;
 }
 
@@ -2177,7 +2178,7 @@ fieldset[disabled] .s-btn {
 }
 
 .s-portfolio__filter-v1-item:hover {
-  color: #242424 !important;
+  color: #DE323A !important;
 }
 
 .s-portfolio__filter-v1-item.cbp-filter-item-active {

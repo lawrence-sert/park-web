@@ -615,16 +615,13 @@
   Font Family
 ------------------------------------*/
 .g-font-family--primary {
-  font-family: Lato, sans-serif !important;
-}
-
-.g-font-family--secondary {
   font-family: Montserrat, sans-serif !important;
 }
 
-.g-font-family--playfair {
-  font-family: Playfair Display, serif !important;
+.g-font-family--secondary {
+  font-family: Quicksand, sans-serif !important;
 }
+
 
 /*----------------------------------
   Font Weight
@@ -7238,7 +7235,7 @@
 }
 
 .g-color--heading {
-  color: #242424 !important;
+  color: #DE323A !important;
 }
 
 .g-color--white {
@@ -7308,7 +7305,7 @@
 }
 
 .g-bg-color--heading {
-  background-color: #242424 !important;
+  background-color: #DE323A !important;
 }
 
 .g-bg-color--white {
